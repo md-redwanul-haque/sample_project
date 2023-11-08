@@ -1,4 +1,5 @@
 class SampleData {
+
   int? userId;
   int? id;
   String? title;
@@ -7,6 +8,7 @@ class SampleData {
   SampleData({this.userId, this.id, this.title, this.body});
 
   SampleData.fromJson(Map<String, dynamic> json) {
+
     userId = json['userId'];
     id = json['id'];
     title = json['title'];
