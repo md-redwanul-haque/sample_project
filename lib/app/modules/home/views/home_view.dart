@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../splash/controllers/splash_controller.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -11,12 +12,21 @@ class HomeView extends GetView<HomeController> {
         title: const Text('HomeView'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      body:  SingleChildScrollView(
+        child: Column(
+          children: [
+            Obx(()=>ListView.builder(
+                shrinkWrap: true,
+                itemCount:Get.find<SplashController>().dataList.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index){
+                  return ListTile(
+                    title: Text("This is Data ${Get.find<SplashController>().dataList[index].title}"),
+                  );
+                }))
+          ],
         ),
-      ),
+      )
     );
   }
 }
