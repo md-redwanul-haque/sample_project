@@ -21,7 +21,8 @@ class HomeView extends GetView<HomeController> {
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (BuildContext context, int index){
                   return ListTile(
-                    title: Text("This is Data ${Get.find<SplashController>().dataList[index].title}"),
+                    title: Text("This is Data ${Get.find<SplashController>().
+                    dataList[index].title}"),
                   );
                 }))
           ],
