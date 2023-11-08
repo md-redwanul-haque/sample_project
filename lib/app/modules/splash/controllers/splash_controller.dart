@@ -19,7 +19,7 @@ class SplashController extends GetxController {
 
 
   moveToNext() {
-    Future.delayed(const Duration(milliseconds: 2000), () async{
+    Future.delayed(const Duration(milliseconds: 3000), () async{
       Get.offNamed(Routes.HOME);
       //Get.toNamed(Routes.HOME);
 
@@ -31,7 +31,7 @@ class SplashController extends GetxController {
   Future<void> fetchData() async{
 
     var res = await ApiCall().fetchData();
-    dataList.value = res!.toList(growable: true);
+    dataList.value = await res!.toList(growable: true);
    for(var item in dataList.value){
 
      var todo = SampleData(

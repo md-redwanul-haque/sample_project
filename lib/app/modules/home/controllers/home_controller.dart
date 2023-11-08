@@ -12,15 +12,10 @@ class HomeController extends GetxController {
     checks();
     super.onInit();
   }
-  RxList<SampleData> todoList =<SampleData>[].obs;
+  RxList<SampleData> dataList =<SampleData>[].obs;
 
-  // Future<List<todoModel>> check()async{
-  //   todoList.value=await DataBaseHelper.dbInstance.getTodos() ;
-  //   return todoList.value;
-  //   update();
-  // }
   void checks()async{
-    todoList.value=await DataBaseHelper.dbInstance.getData();
+    dataList.value=await DataBaseHelper.dbInstance.getData();
   }
   @override
   void onReady() {
