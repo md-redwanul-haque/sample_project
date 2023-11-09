@@ -12,8 +12,6 @@ class SplashView extends GetView<SplashController> {
   @override
   Widget build(BuildContext context) {
     controller.fetchData();
-    controller.moveToNext();
-
     return Scaffold(
 
       body:  SafeArea(

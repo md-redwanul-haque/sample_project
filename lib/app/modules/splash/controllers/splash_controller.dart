@@ -13,7 +13,7 @@ class SplashController extends GetxController {
 
   @override
   void onInit() {
-   moveToNext();
+
     super.onInit();
   }
 
@@ -43,7 +43,7 @@ class SplashController extends GetxController {
      await DataBaseHelper.dbInstance.addSampleData(todo);
 
    }
-
+    moveToNext();
   }
 
   @override
