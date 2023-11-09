@@ -19,8 +19,11 @@ class SplashController extends GetxController {
 
 
   moveToNext() {
+    fetchData();
     Future.delayed(const Duration(milliseconds: 3000), () async{
+
       Get.offNamed(Routes.HOME);
+
       //Get.toNamed(Routes.HOME);
 
     });
@@ -43,7 +46,7 @@ class SplashController extends GetxController {
      await DataBaseHelper.dbInstance.addSampleData(todo);
 
    }
-    moveToNext();
+
   }
 
   @override
